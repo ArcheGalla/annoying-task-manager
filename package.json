@@ -1,0 +1,35 @@
+{
+  "name": "annoying-task-manager",
+  "version": "1.0.0",
+  "description": "Chrome extension for team tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArcheGalla/annoying-task-manager.git"
+  },
+  "keywords": [
+    "chrome-extension",
+    "typescript",
+    "javascript",
+    "task",
+    "manager"
+  ],
+  "author": "ArcheGalla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArcheGalla/annoying-task-manager/issues"
+  },
+  "homepage": "https://github.com/ArcheGalla/annoying-task-manager#readme",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.2"
+  }
+}
