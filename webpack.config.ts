@@ -1,7 +1,6 @@
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
 import {CheckerPlugin} from 'awesome-typescript-loader';
 import {Configuration} from 'webpack';
-import * as webpack from 'webpack';
 
 import {resolve, join} from 'path';
 
@@ -14,7 +13,7 @@ declare const __dirname: string;
 const config: Configuration = {
 	context: resolve(__dirname, 'src'),
 	entry: {
-		popup: './index.ts'
+		popup: './popup/popup.tsx'
 	},
 	devtool: 'source-map',
 	resolve: {
@@ -22,7 +21,7 @@ const config: Configuration = {
 		extensions: ['.ts', '.tsx', '.js', '.jsx']
 	},
 	output: {
-		path: resolve(__dirname, '.dist'),
+		path: resolve(__dirname, 'dist'),
 		filename: '[name].[hash].js',
 		publicPath: '/'
 	},
@@ -49,12 +48,12 @@ const config: Configuration = {
 		]
 	},
 	plugins: [
-		new RemoveWebpackPlugin(['.dist'], {verbose: true, dry: false}),
-		new CopyWebpackPlugin([{from: './assets', to: 'assets'}]),
+		new RemoveWebpackPlugin(['dist'], {verbose: true, dry: false}),
+		new CopyWebpackPlugin([
+			{from: './assets', to: 'assets'},
+			{from: './manifest.json', to: 'manifest.json'}
+		]),
 		new CheckerPlugin(),
-		new webpack.optimize.UglifyJsPlugin({
-			warnings: false, sourceMap: true,
-		}),
 		new HtmlWebpackPlugin({filename: 'popup.html', template: join(__dirname, 'src', 'popup', 'popup.html')})
 	]
 };
