@@ -3,7 +3,11 @@
   "version": "1.1",
   "description": "",
   "permissions": [
+    "notifications"
   ],
+  "chrome_url_overrides" : {
+    "newtab": "main.html"
+  },
   "browser_action": {
     "default_title": "Annoying settings",
     "default_icon": "assets/icon.png",

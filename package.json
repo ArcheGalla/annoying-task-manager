@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack -w",
-    "build": "webpack -p"
+    "build": "cross-env NODE_ENV=development  webpack",
+    "build:prod": "cross-env NODE_ENV=production webpack -p"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/ArcheGalla/annoying-task-manager#readme",
   "dependencies": {
+    "material-ui": "^0.19.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
@@ -36,8 +38,11 @@
     "@types/webpack": "^3.0.9",
     "awesome-typescript-loader": "^3.2.3",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.4",
     "html-webpack-plugin": "^2.30.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
     "remove-webpack-plugin": "^1.2.2",
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.18.2",
